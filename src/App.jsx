@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import logoDesktop from "./assets/logo-desktop.png";
 import logoMobile from "./assets/logo-mobile.png";

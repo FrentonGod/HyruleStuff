@@ -1,7 +1,7 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const Item = () => {
@@ -21,7 +21,7 @@ const Item = () => {
   async function fetchItem() {
     setLoading(true);
     const { data } = await axios.get(
-      `https://botw-compendium.herokuapp.com/api/v2/entry/${id}`
+      `https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${id}`
     );
     setItem(data.data);
     setTimeout(() => setLoading(false), 100);

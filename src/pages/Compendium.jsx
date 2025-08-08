@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SearchResult from "../components/SearchResult";
 
 const Compendium = () => {
@@ -15,16 +15,11 @@ const Compendium = () => {
 
   async function fetchData() {
     const { data } = await axios.get(
-      `https://botw-compendium.herokuapp.com/api/v2/all`
+      `https://botw-compendium.herokuapp.com/api/v3/compendium/all`
     );
-    const compendiumData = [
-      ...data.data.creatures.food,
-      ...data.data.creatures.non_food,
-      ...data.data.equipment,
-      ...data.data.materials,
-      ...data.data.monsters,
-      ...data.data.treasure,
-    ];
+    
+    
+    const compendiumData = data.data;
     setFetchedData(compendiumData);
     setTimeout(() => setLoading(false), 2000);
   }
